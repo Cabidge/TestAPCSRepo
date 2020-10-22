@@ -62,11 +62,15 @@ public class Demo {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                int value = (int)(Math.random() * (maxValue + 1));
+                int value = inclusiveRandom(maxValue);
                 out[i][j] = value;
             }
         }
 
         return out;
+    }
+
+    public static int inclusiveRandom(int maxValue) {
+        return (int)(Math.random() * (maxValue + 1));
     }
 }
