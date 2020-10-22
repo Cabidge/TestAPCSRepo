@@ -17,9 +17,12 @@ public class Demo {
 
         // int[][] x = {a,b,c,d,e};
 
-        int[][] x = create2DArray(4, 5, 6);
+        // int[][] x = create2DArray(4, 5, 6);
 
-        System.out.println(arrayDeepToString(x).replace("},","},\n"));
+        // int[][] x = create2DArrayRandomized(6,4,4);
+        // int[][] x = create2DArrayRandomized(4,10,100);
+
+        // System.out.println(arrayDeepToString(x).replace("},","},\n"));
     }
 
     public static void printLoop(int n) {
@@ -64,6 +67,21 @@ public class Demo {
             for (int j = 0; j < cols; j++) {
                 int value = inclusiveRandom(maxValue);
                 out[i][j] = value;
+            }
+        }
+
+        return out;
+    }
+
+    public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue) {
+        int[][] out = new int[rows][];
+
+        for (int i = 0; i < rows; i++) {
+            int rowLength = inclusiveRandom(cols);
+            out[i] = new int[rowLength];
+
+            for (int j = 0; j < rowLength; j++) {
+                out[i][j] = inclusiveRandom(maxValue);
             }
         }
 
