@@ -9,13 +9,15 @@ public class Demo {
 
         printLoop(n);
 
-        int[] a = {1};
-        int[] b = {1, 3};
-        int[] c = {};
-        int[] d = {4, 5, 6};
-        int[] e = {7, 7, 7, 7};
+        // int[] a = {1};
+        // int[] b = {1, 3};
+        // int[] c = {};
+        // int[] d = {4, 5, 6};
+        // int[] e = {7, 7, 7, 7};
 
-        int[][] x = {a,b,c,d,e};
+        // int[][] x = {a,b,c,d,e};
+
+        int[][] x = create2DArray(4, 5, 6);
 
         System.out.println(arrayDeepToString(x).replace("},","},\n"));
     }
@@ -51,6 +53,20 @@ public class Demo {
         }
         out += "}";
         
+        return out;
+    }
+
+    // B
+    public static int[][] create2DArray(int rows, int cols, int maxValue) {
+        int[][] out = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                int value = (int)(Math.random() * (maxValue + 1));
+                out[i][j] = value;
+            }
+        }
+
         return out;
     }
 }
